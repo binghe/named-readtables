@@ -28,7 +28,7 @@
 
                  ;; SBCL will interpret the ftype declaration as
                  ;; assertion and will insert type checks for us.
-                 #-sbcl
+                 #-(or cmu sbcl)
                  (progn
                    ;; CHECK-TYPE required parameters
                    ,@(loop for req-arg in reqs
